@@ -13,8 +13,8 @@ $(document).ready(function() {
     console.log('result is...');
     console.log(result);
 
-    $('#result-unformatted').html(JSON.stringify(JSON.parse(result)));
-    $('#result-formatted').html(JSON.stringify(JSON.parse(result), null, 2));
+    $('#result-unformatted').val(JSON.stringify(JSON.parse(result)));
+    $('#result-formatted').val(JSON.stringify(JSON.parse(result), null, 2));
   }
 
   $('#clear').click(function() {
