@@ -5,16 +5,10 @@ $(document).ready(function() {
   'use strict';
 
   function doConversion(jsonString) {
-    console.log('converting...');
-    console.log(jsonString);
+    var result = humps.decamelizeKeys(JSON.parse(jsonString), '_');
 
-    var result = humps.decamelize(jsonString);
-
-    console.log('result is...');
-    console.log(result);
-
-    $('#result-unformatted').val(JSON.stringify(JSON.parse(result)));
-    $('#result-formatted').val(JSON.stringify(JSON.parse(result), null, 2));
+    $('#result-unformatted').val(JSON.stringify(result));
+    $('#result-formatted').val(JSON.stringify(result, null, 2));
   }
 
   $('#clear').click(function() {
@@ -25,5 +19,4 @@ $(document).ready(function() {
       doConversion($('#source').val());
       return false;
   });
-
 });
